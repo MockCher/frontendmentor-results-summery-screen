@@ -1,20 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react"
+import { SafeAreaView, View, Text } from "react-native"
+import DashboardCard from "./src/DashBoardCard"
+import Header from "./src/Header"
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View>
+      <Header />
+      <Text style={{ fontSize: 24, marginHorizontal: 30, marginVertical: 20 }}>Summery</Text>
+      <DashboardCard label='Reaction' points='80' hslColor='0, 100%, 67%' />
+      <DashboardCard label='Memory' points='92' hslColor='39, 100%, 56%' />
+      <DashboardCard label='Verbal' points='61' hslColor='166, 100%, 37%' />
+      <DashboardCard label='Visual' points='72' hslColor='234, 85%, 45%' />
     </View>
-  );
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App
